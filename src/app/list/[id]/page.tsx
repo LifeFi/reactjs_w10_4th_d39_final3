@@ -67,12 +67,19 @@ interface IBuyLink {
   name: string;
   url: string;
 }
+interface IListDetailPageProps {
+  params: { id: string };
+}
+
+export const generateMetadata = ({ params: { id } }: IListDetailPageProps) => {
+  return {
+    title: `${id}`,
+  };
+};
 
 export default async function ListDetailPage({
   params: { id },
-}: {
-  params: { id: string };
-}) {
+}: IListDetailPageProps) {
   const data = await getBestsellerList(id);
 
   return (
