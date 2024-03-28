@@ -1,0 +1,12 @@
+.nav {
+  width: 100%;
+}
+.nav ul {
+  display: flex;
+  justify-content: start;
+}
+
+.nav ul li {
+  width: 100px;
+  padding: 10px;
+}
