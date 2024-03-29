@@ -1,4 +1,4 @@
-import { BASE_URL } from "@/app/(home)/page";
+import { BASE_URL } from "@/config";
 import styles from "@/styles/list-detail.module.css";
 import Image from "next/image";
 

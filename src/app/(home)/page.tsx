@@ -1,12 +1,11 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import styles from "@/styles/home.module.css";
+import { BASE_URL } from "@/config";
 
 export const metadata: Metadata = {
   title: "Home",
 };
-
-export const BASE_URL = "https://books-api.nomadcoders.workers.dev";
 
 async function getBestsellerLists(): Promise<IgetBestsellerListsResult> {
   const response = await fetch(`${BASE_URL}/lists`);
