@@ -1,6 +1,11 @@
+import Book from "@/components/book";
 import { BASE_URL } from "@/config";
 import styles from "@/styles/list-detail.module.css";
+import { ChatOpenAI } from "@langchain/openai";
+import { ChatPromptTemplate } from "langchain/prompts";
+import { StringOutputParser } from "langchain/schema/output_parser";
 import Image from "next/image";
+import { Suspense } from "react";
 
 async function getBestsellerList(
   id: string
@@ -87,19 +92,14 @@ export default async function ListDetailPage({
       <h1>{data.results.list_name}</h1>
       <ul className={styles.list}>
         {data.results.books.map((book) => (
-          <li className={styles.item} key={book.primary_isbn13}>
-            <a href={book.amazon_product_url} target="blank">
-              <Image
-                src={book.book_image}
-                alt={book.title}
-                width={200}
-                height={(200 * book.book_image_height) / book.book_image_width}
-                layout="fixed"
-                loading="lazy"
-              />
-              <div>{book.title}</div>
-            </a>
-          </li>
+          <Book
+            key={book.primary_isbn10}
+            title={book.title}
+            url={book.amazon_product_url}
+            image={book.book_image}
+            width={200}
+            height={300}
+          />
         ))}
       </ul>
     </div>

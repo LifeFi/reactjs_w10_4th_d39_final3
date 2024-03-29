@@ -8,17 +8,16 @@ import styles from "../styles/navigation.module.css";
 
 export default function Navigation() {
   const path = usePathname();
-  console.log("path:", path);
-
-  useEffect(() => {
-    console.log("Nav rendered!");
-  }, []);
+  // console.log("path:", path);
 
   return (
     <nav className={styles.nav}>
       <ul>
         <li>
-          <Link href="/">Home</Link> {path == "/" ? "🔥" : ""}
+          <Link scroll={false} href="/">
+            Home
+          </Link>{" "}
+          {path == "/" ? "🔥" : ""}
         </li>
         <li>
           <Link href="/about">About</Link> {path == "/about" ? "🔥" : ""}
