@@ -24,6 +24,7 @@ export default function Book({
     // const response = await fetch(`/api/books/review?title=${title}`, {
     //   method: "GET",
     // });
+
     // const data = await response.json();
     const review = await getMessage(title);
 
