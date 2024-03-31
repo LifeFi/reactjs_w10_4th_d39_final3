@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import styles from "@/styles/about.module.css";
+import styles from "./about.module.css";
 
 export const metadata: Metadata = {
   title: "About",

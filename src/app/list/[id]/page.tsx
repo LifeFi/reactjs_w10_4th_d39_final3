@@ -1,11 +1,7 @@
 import Book from "@/components/book";
-import { BASE_URL } from "@/config";
-import styles from "@/styles/list-detail.module.css";
-import { ChatOpenAI } from "@langchain/openai";
-import { ChatPromptTemplate } from "langchain/prompts";
-import { StringOutputParser } from "langchain/schema/output_parser";
-import Image from "next/image";
-import { Suspense } from "react";
+import { BASE_URL } from "@/constants";
+import styles from "./list-detail.module.css";
+import Spinner from "@/components/spinner";
 
 async function getBestsellerList(
   id: string
@@ -95,6 +91,7 @@ export default async function ListDetailPage({
           <Book
             key={book.primary_isbn10}
             title={book.title}
+            author={book.author}
             url={book.amazon_product_url}
             image={book.book_image}
             width={200}

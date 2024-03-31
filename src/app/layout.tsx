@@ -1,9 +1,19 @@
 import Navigation from "@/components/navigation";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "../styles/globals.css";
+import { Noto_Serif } from "next/font/google";
+import localFont from "next/font/local";
+import "./global.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const notoSerif = Noto_Serif({
+  subsets: ["latin"],
+  variable: "--noto-serif-text",
+});
+
+const chomsky = localFont({
+  src: "../assets/Chomsky.woff",
+  // style: "italic",
+  variable: "--chomsky-text",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html>
-      <body className={inter.className}>
+      <body className={`${chomsky.variable} ${notoSerif.variable}`}>
         <Navigation />
         {children}
       </body>

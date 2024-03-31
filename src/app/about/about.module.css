@@ -10,18 +10,9 @@
 .container h1 {
   font-size: 28px;
   font-weight: 600;
+  margin: 10px 0px 20px 0px;
+}
+.container p {
+  font-size: 20px;
   margin: 10px;
-}
-
-.list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.item {
-  background-color: teal;
-  padding: 10px;
-  color: white;
 }

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import styles from "@/styles/home.module.css";
-import { BASE_URL } from "@/config";
+import styles from "./home.module.css";
+import { BASE_URL } from "@/constants";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 async function getBestsellerLists(): Promise<IgetBestsellerListsResult> {
   const response = await fetch(`${BASE_URL}/lists`);
   const json = await response.json();
+  // throw new Error("This is an error");
   return json;
 }
 

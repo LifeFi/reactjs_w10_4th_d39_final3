@@ -1,3 +1,9 @@
+import Spinner from "@/components/spinner";
+
 export default function Loading() {
-  return <h2>Loading...</h2>;
+  return (
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <Spinner size="35px" />
+    </div>
+  );
 }

@@ -4,7 +4,7 @@ import About from "@/app/about/page";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import styles from "../styles/navigation.module.css";
+import styles from "./navigation.module.css";
 
 export default function Navigation() {
   const path = usePathname();
@@ -13,14 +13,17 @@ export default function Navigation() {
   return (
     <nav className={styles.nav}>
       <ul>
-        <li>
+        <li className={`${styles.item} ${path == "/" ? styles.selected : ""}`}>
           <Link scroll={false} href="/">
             Home
           </Link>{" "}
-          {path == "/" ? "🔥" : ""}
         </li>
-        <li>
-          <Link href="/about">About</Link> {path == "/about" ? "🔥" : ""}
+        <li
+          className={`${styles.item} ${
+            path == "/about" ? styles.selected : ""
+          }`}
+        >
+          <Link href="/about">About</Link>
         </li>
       </ul>
     </nav>
