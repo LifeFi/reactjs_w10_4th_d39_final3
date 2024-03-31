@@ -63,7 +63,11 @@ export default function Book({
       <div className={styles.overlay} onMouseEnter={onMouseEnter}>
         {isLoading ? (
           <div className={styles.loading}>
-            <div>이모티콘 3개로 책리뷰 해주세요.</div>
+            <div className={styles.question}>
+              책GPT야 😘
+              <br />
+              <br /> 이모티콘 3개로 책리뷰 부탁해.
+            </div>
             <div>
               <Spinner
                 size={"35px"}
