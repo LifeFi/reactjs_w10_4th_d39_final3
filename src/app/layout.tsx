@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Noto_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import "./global.css";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const notoSerif = Noto_Serif({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body className={`${chomsky.variable} ${notoSerif.variable}`}>
         <Navigation />
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

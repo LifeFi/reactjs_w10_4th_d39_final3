@@ -13,6 +13,7 @@
   "dependencies": {
     "@langchain/community": "^0.0.43",
     "@langchain/openai": "^0.0.25",
+    "@vercel/speed-insights": "^1.0.10",
     "gh-pages": "^6.1.1",
     "langchain": "^0.1.30",
     "next": "14.1.4",
