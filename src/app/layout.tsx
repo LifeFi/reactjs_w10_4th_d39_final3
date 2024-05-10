@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={`${chomsky.variable} ${notoSerif.variable}`}>
         <Navigation />
         {children}
-        <SpeedInsights />
+        {/* <SpeedInsights /> */}
       </body>
     </html>
   );
